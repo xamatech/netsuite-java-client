@@ -1,0 +1,39 @@
+<project basedir=".">
+
+    <path id="axis.classpath">
+        <fileset dir="lib">
+            <include name="**/*.jar" />
+        </fileset>
+    </path>
+
+    <taskdef resource="axis-tasks.properties" classpathref="axis.classpath" />
+
+
+    <target name="generate.interfaces" description="Generates
+            client interfaces using Axis">
+
+        <echo>Cleaning up generated files</echo>
+        <delete includeemptydirs="true">
+            <fileset dir="${basedir}/src/main/java" includes="**/*"/>
+        </delete>
+
+
+        <echo>Generating client interfaces using Apache Axis</echo>
+        <axis-wsdl2java
+                all="true"
+                wraparrays="true"
+                output="${basedir}/src/main/java"
+                verbose="true"
+                timeout="120000"
+                url="https://webservices.netsuite.com/wsdl/v2019_1_0/netsuite.wsdl"
+        >
+
+            <classpath>
+                <pathelement location="lib/*"/>
+            </classpath>
+
+            <mapping namespace="http://axis.apache.org/ns/interop"
+                       package="interop"></mapping>
+        </axis-wsdl2java>
+    </target>
+</project>
