@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/xamatech/netsuite-java-client.svg)](https://jitpack.io/#xamatech/netsuite-java-client)
+
 # Netuite Java Client
 
 Netsuite Java client for SOAP API [v2019.1](https://webservices.netsuite.com/wsdl/v2019_1_0/netsuite.wsdl).
