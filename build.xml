@@ -25,7 +25,7 @@
                 output="${basedir}/src/main/java"
                 verbose="true"
                 timeout="120000"
-                url="https://webservices.netsuite.com/wsdl/v2019_1_0/netsuite.wsdl"
+                url="https://webservices.netsuite.com/wsdl/v2024_2_0/netsuite.wsdl"
         >
 
             <classpath>
